@@ -2,6 +2,7 @@
 const express = require('express');
 const connectToDb = require('./config/connectToDb')
 const questionsController = require('./controller/questionsController')
+ const cors = require('cors');
 
 // Create express app
 const app = express()
@@ -9,6 +10,8 @@ const app = express()
 // configure an express app
 // to read json file
 app.use(express.json());
+// allow server to accept request from other domain
+app.use(cors());
 
 // Variables
 const PORT = 5000;
