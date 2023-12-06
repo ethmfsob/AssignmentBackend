@@ -1,14 +1,14 @@
 const Question = require('../model/question')
 
 const fetchQuestions = async (req, res) => {
-    // Find the notes
+    // Find the questions
     const questions = await Question.find();
     // Respond with them
     res.json({ questions: questions });
 };
 
 const fetchQuestion = async (req, res) => {
-    // get id of the url
+    // get id off the url
     const questionId = req.params.id;
 
     // Find the question using id
@@ -29,7 +29,7 @@ const createQuestion = async (req, res) => {
         catogery: catogery,
         date: date,
     });
-    // respind with the new note
+    // respond with the new note
     res.json({ question: question });
 };
 
@@ -47,7 +47,7 @@ const updateQuestion = async (req, res) => {
         date: date,
     });
 
-    // find updated note
+    // find updated question
     const question = await Question.findById(questionId);
     // respond with it
     res.json({ question: question });

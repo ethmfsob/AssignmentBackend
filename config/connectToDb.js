@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 // variable 
 const URL = 'mongodb+srv://ethmfsob:ethmfsob123@cluster0.b3gkget.mongodb.net/?retryWrites=true&w=majority'
 
+// connect to mongodb
 async function connectToDb() {
     try {
         await mongoose.connect(URL);
